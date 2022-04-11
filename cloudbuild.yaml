@@ -1,0 +1,10 @@
+steps:
+  # Docker Build
+  - name: 'gcr.io/amit-testing-277517/docker'
+    args: ['build', '-t', 
+           '${PROJECT_ID}/${_REPO_NAME}/helloworld-empathy:$COMMIT_SHA', 
+           '.']
+
+  # Docker Push
+  - name: 'gcr.io/amit-testing-277517/docker'
+    args: ['push', '${PROJECT_ID}/${_REPO_NAME}/helloworld-empathy']
