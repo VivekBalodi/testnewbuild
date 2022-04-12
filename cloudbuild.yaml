@@ -1,7 +1,7 @@
 steps:
 # build the container image
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', '$PROJECT_ID/${_REPO_NAME}/demoapp:$COMMIT_SHA', '.']
+  args: ['build', '-t', 'us-central1-docker.pkg.dev/$PROJECT_ID/dockerimage/demoapp:$COMMIT_SHA', '.']
 # push the container image to Container Registry
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', '$PROJECT_ID/${_REPO_NAME}/demoapp:$COMMIT_SHA']
+  args: ['push', 'us-central1-docker.pkg.dev/$PROJECT_ID/dockerimage/demoapp:$COMMIT_SHA']
