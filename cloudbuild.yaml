@@ -1,10 +1,10 @@
 steps:
 # build the container image
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', '$_Location/$PROJECT_ID/$_Repo_Name/demoapp:$COMMIT_SHA', '.']
+  args: ['build', '-t', '$_LOCATION/$PROJECT_ID/$_REPO_NAME/demoapp:$COMMIT_SHA', '.']
 # push the container image to Container Registry
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'us-central1-docker.pkg.dev/$PROJECT_ID/dockerimage/demoapp:$COMMIT_SHA']
 substitutions:
-    _Location: us-central1-docker.pkg.dev # default value
-    _Repo_Name: dockerimage # default value
+    _LOCATION: us-central1-docker.pkg.dev # default value
+    _REPO_NAME: dockerimage # default value
