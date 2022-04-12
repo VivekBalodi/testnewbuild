@@ -6,5 +6,5 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', '$_LOCATION-docker.pkg.dev/$PROJECT_ID/$_REPO_NAME/demoapp:$COMMIT_SHA']
 # substitutions:
-#     _LOCATION: us-central1-docker.pkg.dev # default value
+#     _LOCATION: us-central1 # default value
 #     _REPO_NAME: dockerimage # default value
